@@ -1,0 +1,50 @@
+<h1 id="poudlock">Poudlock</h1>
+<p>Il était une fois, une école d'apprentis magidevs du nom de Poudlock. Cette école a été fondée par 4 personnes aux talents divers et complémentaires : <strong>Anthony</strong>, <strong>Dario</strong>, <strong>Lucie</strong> et <strong>Maxime</strong>.</p>
+<p>Ces derniers décidèrent de diviser l'école en 4 maisons distinctes basées sur leurs noms. Pour ce faire, nos magidevs conçurent un habile système de sélection bâptisé le <strong>choixp'O</strong>. Toute ressemblance avec une oeuvre de fiction serait purement fortuite.</p>
+<p>Seulement, le choixp'O souffre de quelques ratés ces temps-ci et n'arrive plus à attribuer de maison aux nouveaux apprentis.</p>
+<p>Votre mission sera de recoder le choixp'O afin qu'il repuisse officier !</p>
+<h2 id="but-de-lexercice">But de l'exercice</h2>
+<p>Quand on entre un nom dans le champ du formulaire et qu'on valide, le choixp'O doit afficher le blason d'une des maisons de Poudlock dans sa bulle de dialogue. Si on valide le formulaire vide, il doit dire <em>"Ça ne fonctionne qu'avec un nom, pardi !"</em>.</p>
+<p>Exemple de choixp'O réparé :<br />
+<img src="screens/capture.png?raw=true" alt="Alt text" title="Optional Title" /></p>
+<h2 id="instructions">Instructions</h2>
+<p>Tu as à disposition : un fichier HTML déjà fait, un fichier CSS et un fichier JS à compléter, le seul nécessitant une modification. Ce dernier contient déjà une base de module.</p>
+<p>Pour cet exercice vous aurez le choix de faire la répartition des apprentis magidevs selon deux principes : le <strong>mode chaotique</strong> ou le <strong>mode organisé</strong>.</p>
+<h3 id="mode-chaotique---facile">Mode chaotique - Facile</h3>
+<p>Quand on tape le nom d'un apprenti magidev, on affiche un blason de manière aléatoire.</p>
+<h3 id="mode-organisé---difficile">Mode organisé - Difficile</h3>
+<p>Quand on tape le nom d'un apprenti magidev, on affiche un blason selon des règles prédéfinies : </p>
+<ul>
+<li>Si le nom contient exactement <strong>8 caractères</strong>, on affiche le blason de la maison <strong>Maxopus</strong>.</li>
+<li>Sinon, si la <strong>première</strong> lettre du nom est un <strong>L</strong> ou la <strong>dernière</strong> un <strong>X</strong>, on affiche le blason de la maison <strong>Lustrix</strong>.</li>
+<li>Sinon, si le nombre de lettres du nom est un <strong>multiple de 5</strong> ou un  <strong>multiple de 3</strong>, on affiche le blason de la maison <strong>Anthorvus</strong>.</li>
+<li>Sinon, on affiche le blason de la maison <strong>Darioptera</strong>.</li>
+</ul>
+<h2 id="par-quoi-je-commence-">Par quoi je commence ?</h2>
+<p>Le fichier <code>app.js</code> contient déjà un début de module. Au chargement de la page, la méthode <code>init</code> de l'objet <code>app</code> est exécutée. </p>
+<p>Voici une petite aide, pas à pas pour, t'aider à commencer : </p>
+<ol>
+<li>Sélectionner le formulaire contenant le champ.</li>
+<li>Ecouter la soumission du formulaire.</li>
+<li>Quand le formulaire est soumis, on récupère le contenu du champ texte.</li>
+<li>On fait des vérifications sur le contenu du champ (Ex : est-il vide ?) selon le mode qu'on a choisi.</li>
+<li>On modifie le contenu de la bulle en conséquence.</li>
+</ol>
+<h2 id="indices">Indices</h2>
+<p><details><br />
+<summary>Mode chaotique</summary></p>
+<ul>
+<li>Il y a un tableau avec toutes les maisons. Elles auront donc un index qui va de 0 à 3.</li>
+<li>En JS, on peut récupérer un nombre aléatoire entre deux bornes incluses grâce à la formule suivante. Dans l'exemple, on tire un nombre entre 25 et 50.</li>
+</ul>
+<pre><code>hljs  <span class="hljs-attribute">var</span> randomNumber = Math.floor(Math.random() * (<span class="hljs-number">50</span> - <span class="hljs-number">25</span>) + <span class="hljs-number">25</span>);
+</code></pre>
+<p></details><br />
+<details><br />
+<summary>Mode organisé</summary></p>
+<ul>
+<li>On peut utiliser la propriété <code>length</code> pour compter le nombre de caractères d'une string.</li>
+<li>Pour savoir quelle lettre est située à telle position d'une string, on peut utiliser la fonction <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/charAt">charAt</a>.</li>
+<li>Pour connaître un multiple, on peut utiliser modulo <code>%</code>.</li>
+</ul>
+<p></details></p>
